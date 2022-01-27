@@ -8,7 +8,7 @@ import Button from '../../../components/atoms/Button';
 import LineInput from '../../../components/atoms/Input/LineInput';
 import { getData, storeData } from '../../../utils/AsyncStorage';
 
-const NamaScreen = () => {
+const NamaScreen = ({ navigation }) => {
     const [active, setActive] = React.useState(false);    
     return(
         <Register
@@ -20,7 +20,7 @@ const NamaScreen = () => {
                 alignItems:'center'
             }}>
             <LineInput onFocus={() => setActive(true)} active={active} onBlur={() => setActive(false)}/>
-            <Button onPress={() => console.log(getData('@keyA'))} backgroundColor={Colors.secondary} type="fill" text="Lanjut!"/>
+            <Button onPress={() => navigation.navigate('Dashboard')} backgroundColor={Colors.secondary} type="fill" text="Lanjut!"/>
             </View>
         </Register>
     )
